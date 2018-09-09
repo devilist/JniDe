@@ -1,0 +1,1 @@
+include ':app', ':libglrender0', ':libpng'
