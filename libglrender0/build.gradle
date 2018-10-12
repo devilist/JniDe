@@ -2,17 +2,30 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 27
-
-
-
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+//            moduleName "libpngdecoder"
+//            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86", "x86_64", "mips64", "mips"
+        }
 
+        sourceSets.main {
+            jni.srcDirs = [] //屏蔽掉默认的jni编译生成过程
+            jniLibs.srcDir "src/main/jniLibs"
+        }
+    }
+
+    externalNativeBuild {
+//        cmake {
+//            path "src/main/cpp/CMakeLists.txt"
+//        }
+        ndkBuild {
+            path "src/main/jni/Android.mk"
+        }
     }
 
     buildTypes {
@@ -27,8 +40,4 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }

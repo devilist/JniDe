@@ -2,7 +2,8 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := libpngdecoder
+LOCAL_MODULE := pngdecoder
+
 LOCAL_SRC_FILES = ./libpng/png.c \
 				  ./libpng/pngerror.c \
 				  ./libpng/pngget.c \
