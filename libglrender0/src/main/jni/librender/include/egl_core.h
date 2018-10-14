@@ -10,6 +10,10 @@
 #include <android/native_window.h>
 #include <KHR/khrplatform.h>  // https://stackoverflow.com/questions/49683210/what-is-the-khr-platform-header-doing
 
+#include <pthread.h>
+
+// EGLAPIENTRYP 实际上是关键字 __stdcall
+// 被这个关键字修饰的函数，其参数都是从右向左通过堆栈传递的
 // __stdcall EGL_PRESENTATION_TIME_ANDROID_PROC
 typedef EGLBoolean (EGLAPIENTRYP EGL_PRESENTATION_TIME_ANDROID_PROC)(EGLDisplay display,
                                                                      EGLSurface surface,
@@ -32,6 +36,8 @@ public:
 
     bool init(EGLContext shareContext);
 
+    void release();
+
     EGLSurface createWindowSurface(ANativeWindow *_window);
 
     EGLSurface createOffScreenSurface(int width, int height);
@@ -42,11 +48,9 @@ public:
 
     void releaseSurface(EGLSurface eglSurface);
 
-    void release();
-
     int querySurface(EGLSurface eglSurface, int what);
 
-    int setPresentationTime(EGLSurface eglSurface, khronos_stime_nanoseconds_t nanoseconds);
+    void setPresentationTime(EGLSurface eglSurface, khronos_stime_nanoseconds_t nanoseconds);
 
     EGLContext getContext();
 
