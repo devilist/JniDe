@@ -16,7 +16,8 @@ LOCAL_SRC_FILES = \
 	$(LOCAL_PATH)/librender/egl_core.cpp \
 	$(LOCAL_PATH)/librender/preview_texture.cpp \
 	$(LOCAL_PATH)/librender/preview_render.cpp \
-	$(LOCAL_PATH)/librender/preview_controller.cpp
+	$(LOCAL_PATH)/librender/preview_controller.cpp \
+	./PngPreviewController0.cpp
 
 #日志等级
 ifeq ($(APP_OPTIM), release)
