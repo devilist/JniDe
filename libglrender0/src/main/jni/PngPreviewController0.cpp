@@ -10,8 +10,8 @@
 
 #define LOG_TAG "PicPreviewController"
 
-ANativeWindow *nativeWindow = 0;
-PreviewController *previewController = 0;
+static ANativeWindow *nativeWindow = 0;
+static PreviewController *previewController = 0;
 
 JNIEXPORT void JNICALL Java_com_devilist_glrender_pngrender_PngPreviewController0_init
 		(JNIEnv *env, jobject obj, jstring pngPath) {
