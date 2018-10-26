@@ -5,7 +5,7 @@
 #include <string.h>
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
-#include "../libpng/png.h"
+#include "./png.h"
 
 typedef struct {
 	const int width;

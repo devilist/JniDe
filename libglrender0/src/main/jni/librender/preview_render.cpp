@@ -54,7 +54,7 @@ void PreviewRender::render()
 {
     MY_LOGE(LOG_TAG, "PreviewRender render");
     glViewport(backingLeft, backingTop, backingWidth, backingHeight);
-    glClearColor(0f, 0f, 0f, 0f);
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

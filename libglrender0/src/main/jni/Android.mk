@@ -2,7 +2,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := pngdecoder
-LOCAL_SRC_FILES := $(LOCAL_PATH)/libpngdecoder/libpngdecoder.a
+LOCAL_SRC_FILES := libpngdecoder/libpngdecoder.a
 include $(PREBUILT_STATIC_LIBRARY)
 
 include $(CLEAR_VARS)
@@ -13,10 +13,10 @@ LOCAL_C_INCLUDES := \
 
 LOCAL_STATIC_LIBRARIES := pngdecoder
 LOCAL_SRC_FILES = \
-	$(LOCAL_PATH)/librender/egl_core.cpp \
-	$(LOCAL_PATH)/librender/preview_texture.cpp \
-	$(LOCAL_PATH)/librender/preview_render.cpp \
-	$(LOCAL_PATH)/librender/preview_controller.cpp \
+	./librender/egl_core.cpp \
+	./librender/preview_texture.cpp \
+	./librender/preview_render.cpp \
+	./librender/preview_controller.cpp \
 	./PngPreviewController0.cpp
 
 #日志等级
@@ -31,6 +31,6 @@ LOCAL_LDLIBS := -L$(SYSROOT)/usr/lib -llog -lz -landroid
 # Link with OpenGL ES
 LOCAL_LDLIBS += -lGLESv2 -lEGL
 
-LOCAL_MODULE := pngrender
+LOCAL_MODULE := pngrender0
 include $(BUILD_SHARED_LIBRARY)
 

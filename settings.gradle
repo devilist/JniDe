@@ -1,1 +1,3 @@
-include ':app', ':libglrender0', ':libpng'
+include ':app'
+include ':libpng'
+include ':libglrender0'

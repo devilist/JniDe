@@ -28,16 +28,16 @@ static const char *PREVIEW_FRAG_SHADER =
                 "}\n";
 
 //物体顶点坐标
-static const GLfloat vertices[] = {-1f, 1f,
-                                   -1f, -1f,
-                                   1f, 1f,
-                                   1f, -1f};
+static const GLfloat vertices[] = {-1.0f, 1.0f,
+                                   -1.0f, -1.0f,
+                                   1.0f, 1.0f,
+                                   1.0f, -1.0f};
 
 // 纹理坐标
-static const GLfloat texCoords[] = {0f, 0f,
-                                    0f, 1f,
-                                    1f, 0f,
-                                    1f, 1f};
+static const GLfloat texCoords[] = {0.0f, 0.0f,
+                                    0.0f, 1.0f,
+                                    1.0f, 0.0f,
+                                    1.0f, 1.0f};
 
 class PreviewRender
 {

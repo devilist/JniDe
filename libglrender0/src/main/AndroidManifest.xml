@@ -1,2 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.devilist.glrender" />
+    package="com.devilist.glrender">
+
+    <application>
+        <activity android:name="com.devilist.demo.PngPreview0Activity" />
+
+    </application>
+
+</manifest>
