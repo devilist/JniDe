@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_render0:
-                PngPreview0Activity.start(this, "mnt/sdcard/z/render0.png");
+                PngPreview0Activity.start(this, "sdcard/z/render0.png");
                 break;
         }
 
